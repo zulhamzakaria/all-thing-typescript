@@ -1,4 +1,10 @@
 let greetings: string = "kkkk";
+const total: number = 14.34;
+let userId: number = 44567;
+let isAuthenticated = true;
+isAuthenticated = false;
+
+//type inference: auto type casting based on value
 
 /*
 wouldnt work
