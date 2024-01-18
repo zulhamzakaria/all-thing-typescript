@@ -13,3 +13,9 @@ function provideId(id) {
     }
     return id.toLowerCase();
 }
+function isStudent(subject) {
+    if ("studentId" in subject) {
+        return isStudent;
+    }
+    return false;
+}
