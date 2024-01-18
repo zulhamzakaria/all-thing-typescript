@@ -19,8 +19,18 @@ class User2 {
 }
 class UserFromType {
     constructor(user) {
+        this._courseCount = 1;
         user.name = "jonny";
         user.age = 78;
+    }
+    get genEmail() {
+        return `mail@mail.com`;
+    }
+    get CurseCount() {
+        return this._courseCount;
+    }
+    set CourseNumber(courseNumber) {
+        this._courseCount = courseNumber;
     }
 }
 const client = new User("jonny", 18);
