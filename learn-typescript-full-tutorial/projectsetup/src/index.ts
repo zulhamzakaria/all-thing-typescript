@@ -44,3 +44,18 @@ export type UserType = {
 };
 
 const client = new User("jonny", 18);
+
+class Employee {
+  protected salary: number = 0;
+  constructor(public name: string, public employeeId: string) {
+    this.name = name;
+    this.employeeId = employeeId;
+  }
+}
+
+class HOD extends Employee {
+  isManager = true;
+  getSalary() {
+    this.salary = 15000;
+  }
+}

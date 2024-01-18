@@ -34,3 +34,21 @@ class UserFromType {
     }
 }
 const client = new User("jonny", 18);
+class Employee {
+    constructor(name, employeeId) {
+        this.name = name;
+        this.employeeId = employeeId;
+        this.salary = 0;
+        this.name = name;
+        this.employeeId = employeeId;
+    }
+}
+class HOD extends Employee {
+    constructor() {
+        super(...arguments);
+        this.isManager = true;
+    }
+    getSalary() {
+        this.salary = 15000;
+    }
+}
