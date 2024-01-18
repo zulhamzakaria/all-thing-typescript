@@ -30,3 +30,28 @@ function isStudent(subject: Person | Student) {
   }
   return false;
 }
+
+function logValue(x: Date | string) {
+  if (x instanceof Date) {
+    return x.toUTCString();
+  }
+  return x.toLowerCase();
+}
+
+type Fish = { swim: () => {} };
+type Bird = { fly: () => {} };
+
+// predicate
+function isFish(x: Fish | Bird): x is Fish {
+  return (x as Fish).swim !== undefined;
+}
+
+function getFood(x: Fish | Bird) {
+  if (isFish(x)) {
+    x;
+    return "fish food";
+  } else {
+    x;
+    return "bird food";
+  }
+}
