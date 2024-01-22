@@ -6,4 +6,5 @@ type Test = {
 
 const error = (message: string): void => {
   console.log(`Error:${message}`);
+  return;
 };
