@@ -13,3 +13,7 @@ const myNmae: string = "name";
 const numbah: number = 7.888;
 // boolean
 const bool: boolean = false;
+
+// type inference: stirng
+const cookie = "Gulf";
+console.log(typeof cookie);
