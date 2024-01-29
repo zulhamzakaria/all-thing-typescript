@@ -1,3 +1,5 @@
+// derive value from state type so it gets automatically updated?
+
 export type Setters<State> = {
   [K in keyof State & string as `set${Capitalize<K>}`]: (
     value: State[K]
