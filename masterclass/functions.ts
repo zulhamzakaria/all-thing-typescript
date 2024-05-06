@@ -13,6 +13,7 @@ function greetAll(names: string[]) {
     console.log(name);
   });
 }
+
 function greetAllSpread(...names: string[]) {
   names.forEach((name) => {
     console.log(name);
@@ -20,4 +21,5 @@ function greetAllSpread(...names: string[]) {
 }
 
 greetAll(["peeta", "mon", "sany"]);
-greetAll(["spread", "peeta", "mon", "sany"]);
+// ... allows for the use if individual strings as args
+greetAllSpread("spread", "peeta", "mon", "sany");
