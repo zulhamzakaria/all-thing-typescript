@@ -15,6 +15,7 @@ import { Counter } from "./components/state/Counter";
 import { LoggedIn } from "./components/state/LoggedIn";
 // import { User } from "./components/state/User";
 import { Status } from "./components/Status";
+import { Toast } from "./components/templateliterals/Toast";
 
 function App() {
   const PersonName = {
@@ -30,6 +31,8 @@ function App() {
 
   return (
     <div className="App">
+      <Toast position="center" />
+
       <List items={["Hal", "John", "Brut"]} onClick={(item) => alert(item)} />
 
       <UserContextProvider>
