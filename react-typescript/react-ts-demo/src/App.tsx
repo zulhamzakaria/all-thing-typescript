@@ -6,6 +6,7 @@ import { Heading } from "./components/Heading";
 import { Input } from "./components/Input";
 import { Person } from "./components/Person";
 import { PersonList } from "./components/PersonList";
+import { LoggedIn } from "./components/state/LoggedIn";
 import { Status } from "./components/Status";
 
 function App() {
@@ -29,6 +30,8 @@ function App() {
           background: "lime",
         }}
       />
+      {""}
+      <LoggedIn />
       {""}
       <Greet name={"joni"} messageCount={10} isLoggedId={false} />
       <Person name={PersonName} />
