@@ -8,6 +8,7 @@ type AuthUser = {
 export const User = () => {
   const [user, setUser] = useState<AuthUser | null>(null);
   const [user1, setUser1] = useState<AuthUser>({ name: "", email: "" });
+  const [user2, setUser2] = useState<AuthUser>({} as AuthUser);
   const handleLogin = () => {
     setUser({
       name: "Jonni",
@@ -16,6 +17,7 @@ export const User = () => {
   };
   const handleLogout = () => {
     setUser(null);
+    setUser2({} as AuthUser);
   };
   return (
     <div>
