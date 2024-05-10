@@ -1,16 +1,4 @@
-// export const Greet = () => {
-//   return (
-//     <div>
-//       <h2>Cock</h2>
-//     </div>
-//   );
-// };
-
-type GreetProps = {
-  name: string;
-  messageCount?: number;
-  isLoggedId: boolean;
-};
+import { GreetProps } from "./Props";
 
 export default function Greet({ name, messageCount, isLoggedId }: GreetProps) {
   return (
