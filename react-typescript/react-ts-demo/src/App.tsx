@@ -1,4 +1,5 @@
 import "./App.css";
+import { Button } from "./components/Button";
 import Greet from "./components/Greet";
 import { Heading } from "./components/Heading";
 import { Person } from "./components/Person";
@@ -26,6 +27,14 @@ function App() {
       <Status status="success" />
       <Status status="error" />
       <Heading>Passing some text between the Heading tags!</Heading>
+      <Button
+        handleClick={() => {
+          alert("button clicked");
+        }}
+        handleClickWithEvent={(e) => {
+          alert(e.currentTarget);
+        }}
+      />
     </div>
   );
 }
