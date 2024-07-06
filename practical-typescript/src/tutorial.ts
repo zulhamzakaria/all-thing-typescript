@@ -13,3 +13,8 @@ postcode = "malibu-99";
 
 let response: "success" | "pending" | "error";
 response = "error";
+
+let notSure: any;
+notSure = 4;
+notSure = "error occurred";
+notSure = () => {};
