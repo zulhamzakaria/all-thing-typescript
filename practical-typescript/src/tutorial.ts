@@ -10,3 +10,6 @@ const sex:Sex = 'female'
 let postcode: number|string
 postcode = 90990
 postcode = 'malibu-99'
+
+let response : 'success'|'pending'|'error'
+response='error'
