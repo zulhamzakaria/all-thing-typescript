@@ -18,3 +18,9 @@ let notSure: any;
 notSure = 4;
 notSure = "error occurred";
 notSure = () => {};
+
+let someVar: string | undefined;
+if (1 === 1) {
+  someVar?.toLocaleUpperCase();
+}
+console.log(someVar?.length);
