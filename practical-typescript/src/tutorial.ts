@@ -44,3 +44,6 @@ const employees: Person[] = [
 employees.push({ name: "roxy", age: 25 });
 
 // alert(employees.length);
+
+let villagers: Person[] = [{ name: "karm", age: 59 }];
+let moreVillagers = [...villagers, { name: "whitnet", age: 44 }];
