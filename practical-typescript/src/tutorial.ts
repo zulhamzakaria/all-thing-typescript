@@ -57,3 +57,6 @@ shallowCopy[0].name = "Eve"; // Also changes originalArray[0].name
 // Deep copy (new array with new objects)
 const deepCopy = JSON.parse(JSON.stringify(originalArray));
 deepCopy[1].name = "Charlie"; // Doesn't affect originalArray[1].name
+
+let fruits:string[]= ['apple', 'orange', 'pear']
+fruits.pop()
