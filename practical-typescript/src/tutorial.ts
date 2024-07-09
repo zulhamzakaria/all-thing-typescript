@@ -30,3 +30,17 @@ let prices: Array<number> = [100, 75, 99];
 let names: string[] = ["100", "75", "99"];
 let unionArray: (string | number)[] = ["susan", 19];
 // array manipulation
+
+interface Person {
+  name: string;
+  age: number;
+}
+
+const employees: Person[] = [
+  { name: "jonny", age: 19 },
+  { name: "lopetegui", age: 44 },
+];
+
+employees.push({ name: "roxy", age: 25 });
+
+// alert(employees.length);
