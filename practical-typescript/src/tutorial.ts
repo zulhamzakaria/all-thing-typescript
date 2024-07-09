@@ -24,3 +24,9 @@ if (1 === 1) {
   someVar?.toLocaleUpperCase();
 }
 console.log(someVar?.length);
+
+// array
+let prices: Array<number> = [100, 75, 99];
+let names: string[] = ["100", "75", "99"];
+let unionArray: (string | number)[] = ["susan", 19];
+// array manipulation
