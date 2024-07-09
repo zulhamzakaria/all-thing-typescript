@@ -47,3 +47,13 @@ employees.push({ name: "roxy", age: 25 });
 
 let villagers: Person[] = [{ name: "karm", age: 59 }];
 let moreVillagers = [...villagers, { name: "whitnet", age: 44 }];
+
+const originalArray = [{ name: "Alice" }, { name: "Bob" }];
+
+// Shallow copy (both arrays share the same objects)
+const shallowCopy = [...originalArray];
+shallowCopy[0].name = "Eve"; // Also changes originalArray[0].name
+
+// Deep copy (new array with new objects)
+const deepCopy = JSON.parse(JSON.stringify(originalArray));
+deepCopy[1].name = "Charlie"; // Doesn't affect originalArray[1].name
