@@ -62,3 +62,6 @@ let fruits: string[] = ["apple", "orange", "pear"];
 fruits.pop();
 
 fruits.splice(1, 1);
+
+const numbers = [2, 3, 4, 5, 6];
+const doubled = numbers.map((num) => num * 2);
