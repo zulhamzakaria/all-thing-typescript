@@ -30,3 +30,15 @@ const addId2 = <T extends object | string[]>(obj: T) => {
     ...obj,
   };
 };
+
+interface newInterface<T> {
+  val: string;
+  data: T;
+}
+
+const someVal: newInterface<{ meta: string }> = {
+  val: "corn",
+  data: {
+    meta: "yellow",
+  },
+};
