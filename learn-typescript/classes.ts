@@ -1,6 +1,8 @@
 class User implements UserInterface {
   private localFirstName: string;
   private localLastName: string;
+  // only accessable thru the class itself i.e User.maxAge like c#
+  static readonly maxAge = 35;
 
   constructor(firstName: string, lastName: string) {
     this.localFirstName = firstName;
