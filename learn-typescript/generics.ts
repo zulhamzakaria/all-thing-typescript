@@ -8,10 +8,15 @@ const addId = <T>(obj: T) => {
   };
 };
 
-const user = {
+interface IUser {
+  name: string;
+}
+
+const user: IUser = {
   name: "jonny",
 };
 
 console.log(addId(user));
 // alternatively
 const result = addId(user);
+const result2 = addId<IUser>(user);
