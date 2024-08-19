@@ -4,6 +4,10 @@ interface Person extends Address {
 interface Address {
   workAddress: string;
   homeAddress: string;
+  // optional
+  deliveryAddress?: string;
+  //function => returns strign
+  getAddress(): string;
 }
 
 interface Buyer extends Person {
@@ -15,4 +19,7 @@ let user01: Buyer = {
   name: "jonny",
   workAddress: "",
   homeAddress: "",
+  getAddress() {
+    return "u live at";
+  },
 };
