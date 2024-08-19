@@ -1,6 +1,6 @@
 class User {
-  localFirstName: string;
-  localLastName: string;
+  private localFirstName: string;
+  private localLastName: string;
 
   constructor(firstName: string, lastName: string) {
     this.localFirstName = firstName;
