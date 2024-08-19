@@ -24,3 +24,9 @@ console.log(user.getFullName());
 interface UserInterface {
   displayAge(): number;
 }
+
+// inheritacne
+class Employee extends User {}
+// first and lastname are required
+const emp01 = new Employee("skye", "blue");
+console.log(emp01.displayAge);
