@@ -42,3 +42,13 @@ const someVal: newInterface<{ meta: string }> = {
     meta: "yellow",
   },
 };
+
+interface ICat<T, V> {
+  breed: T;
+  diet: V;
+}
+
+const Tiger: ICat<string, string> = {
+  breed: "himalayan",
+  diet: "wild boar",
+};
