@@ -2,7 +2,7 @@
 // uses functions with special syntax
 // uncomment experimentalDecorators setting
 
-// @CondimentDecorator("sugar")
+@CondimentDecorator("sugar")
 @TemplateDecorator("<p>Dynamic paragraph</p>", "container")
 class Coffee {
   type: string = "Arabica";
