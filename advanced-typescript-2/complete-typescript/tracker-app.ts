@@ -7,9 +7,11 @@ const addExpButton = document.querySelector(
   ".add-expense-btn"
 )! as HTMLButtonElement;
 
+const expenseItems: Expense[] = [];
+
 class Expense {
-  static currentId: number = 0;
-  id: number = 0;
+  private currentId: number = 0;
+  readonly id: number = 0;
   type: "credit" | "debit" = "debit";
   description: string = "";
   amount: number = 0;
@@ -18,7 +20,7 @@ class Expense {
     this.type = type;
     this.description = desc;
     this.amount = amount;
-    this.id = ++Expense.currentId;
+    this.id = ++this.currentId;
   }
 }
 
@@ -32,5 +34,5 @@ addExpButton.addEventListener("click", function (e) {
     expDesc.value,
     expAmount.value as unknown as number
   );
-  //   const exp = new Expense(expType, expDesc, expAmount);
+  expenseItems.push(exp)
 });
