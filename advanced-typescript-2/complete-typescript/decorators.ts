@@ -2,7 +2,7 @@
 // uses functions with special syntax
 // uncomment experimentalDecorators setting
 
-@AddSugar
+@CondimentDecorator('sugar')
 class Coffee {
   type: string = "Arabica";
   constructor() {
@@ -10,8 +10,11 @@ class Coffee {
   }
 }
 
-function AddSugar(target:Function){
-    console.log('Adding sugar')
+function CondimentDecorator(condiment: string) {
+  function AddSugar(target: Function) {
+    console.log(target);
+  }
+  return AddSugar;
 }
 
-const coffee = new Coffee()
+const coffee = new Coffee();
