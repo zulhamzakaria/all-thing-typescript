@@ -62,7 +62,7 @@ function DisplayExpenses() {
       <div class='exp-desc'>${item.description}</div>
       <div class='exp-amt'>${item.amount}</div>
       <div class='exp-delete'>
-        <button class='delete-expense'>X</button>
+        <button class='delete-expense' onClick='deleteExpense(${item.id})'>X</button>
       </div>
     </div>
     `;
@@ -82,4 +82,15 @@ function calculateTotal() {
 }
 function ShowTotal() {
   totalAmountDiv.textContent = "Bal: " + totalAmount.toString();
+}
+function deleteExpense(id: number) {
+  const expense: Expense = expenseItems.find((item) => {
+    return item.id === id;
+  }) as Expense;
+  const index = expenseItems.indexOf(expense);
+  // index -1 == not found
+  if (index >= 0) {
+    expenseItems.splice(index, 1);
+  }
+  DisplayExpenses();
 }
