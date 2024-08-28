@@ -12,8 +12,12 @@ const debitDiv = document.querySelector(
 const creditDiv = document.querySelector(
   ".expense-credit-item-container"
 )! as HTMLDivElement;
+const totalAmountDiv = document.querySelector(
+  ".total-expense-amount"
+)! as HTMLDivElement;
 
 const expenseItems: Expense[] = [];
+let totalAmount: number = 0;
 
 class Expense {
   private currentId: number = 0;
@@ -43,6 +47,8 @@ addExpButton.addEventListener("click", function (e) {
   expenseItems.push(exp);
 
   DisplayExpenses();
+  totalAmount = calculateTotal();
+  ShowTotal();
 });
 function DisplayExpenses() {
   debitDiv.innerHTML = "";
@@ -63,4 +69,17 @@ function DisplayExpenses() {
 
     containerDiv.insertAdjacentHTML("beforeend", template);
   });
+}
+function calculateTotal() {
+  return expenseItems.reduce((total, exp) => {
+    let amount = exp.amount;
+    if (exp.type === "debit") {
+      amount = -exp.amount;
+    }
+    total += amount;
+    return total;
+  }, 0);
+}
+function ShowTotal() {
+  totalAmountDiv.textContent = "Bal: " + totalAmount.toString();
 }
