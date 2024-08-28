@@ -6,6 +6,10 @@ interface Person {
   age: number;
 }
 
+interface Person {
+  address: string[];
+}
+
 interface Role {
   role: "admin" | "user" | "buyer";
 }
@@ -19,6 +23,7 @@ const jonni: Employee = {
   age: 25,
   role: "admin",
   employeeId: "FN009",
+  address: ["123", "Spooky Rd."],
 };
 
 class HR implements Employee {
@@ -26,7 +31,8 @@ class HR implements Employee {
     public employeeId: string,
     public name: string,
     public age: number,
-    public role: "admin" | "user" | "buyer"
+    public role: "admin" | "user" | "buyer",
+    public address: Array<string>
   ) {}
   isAdmin() {
     return this.role === "admin";
