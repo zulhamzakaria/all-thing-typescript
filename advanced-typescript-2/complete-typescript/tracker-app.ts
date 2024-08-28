@@ -93,4 +93,14 @@ function deleteExpense(id: number) {
     expenseItems.splice(index, 1);
   }
   DisplayExpenses();
+  UpdateBalance(expense);
+}
+function UpdateBalance(expense: Expense) {
+  let amount = expense.amount;
+  if (expense.type === "credit") {
+    totalAmount -= amount;
+  } else {
+    totalAmount += amount;
+  }
+  ShowTotal();
 }
