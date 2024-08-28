@@ -6,6 +6,12 @@ const expAmount = document.getElementById("amount")! as HTMLInputElement;
 const addExpButton = document.querySelector(
   ".add-expense-btn"
 )! as HTMLButtonElement;
+const debitDiv = document.querySelector(
+  ".expense-debit-item-container"
+)! as HTMLDivElement;
+const creditDiv = document.querySelector(
+  ".expense-credit-item-container"
+)! as HTMLDivElement;
 
 const expenseItems: Expense[] = [];
 
@@ -34,5 +40,15 @@ addExpButton.addEventListener("click", function (e) {
     expDesc.value,
     expAmount.value as unknown as number
   );
-  expenseItems.push(exp)
+  expenseItems.push(exp);
+
+  DisplayExpenses();
 });
+function DisplayExpenses() {
+  debitDiv.innerHTML = "";
+  creditDiv.innerHTML = "";
+  expenseItems.map((item) => {
+    let containerDiv = item.type === "credit" ? creditDiv : debitDiv;
+    containerDiv.insertAdjacentHTML("beforeend", `<h3>${item}</h3>`);
+  });
+}
