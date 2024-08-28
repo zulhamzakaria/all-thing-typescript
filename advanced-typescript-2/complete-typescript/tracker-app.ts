@@ -49,6 +49,18 @@ function DisplayExpenses() {
   creditDiv.innerHTML = "";
   expenseItems.map((item) => {
     let containerDiv = item.type === "credit" ? creditDiv : debitDiv;
-    containerDiv.insertAdjacentHTML("beforeend", `<h3>${item}</h3>`);
+
+    let cssClass = item.type === "credit" ? "credit-item" : "debit-item";
+    let template = `
+    <div class=${cssClass}>
+      <div class='exp-desc'>${item.description}</div>
+      <div class='exp-amt'>${item.amount}</div>
+      <div class='exp-delete'>
+        <button class='delete-expense'>X</button>
+      </div>
+    </div>
+    `;
+
+    containerDiv.insertAdjacentHTML("beforeend", template);
   });
 }
