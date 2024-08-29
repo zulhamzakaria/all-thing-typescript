@@ -5,6 +5,7 @@
 - webpack needs file inside public folder. modify the webpack config
 - in development mode, file is generated inside memory
 - for production mode, create a new config file. name can be anything 
+- package.json : inside 'scripts', expand "build" with --config webpack.config.prod.js 
 - content (dev):
     const path = require('path')
     module.exports = {
@@ -30,6 +31,7 @@
     }
 - content (prod):
     const path = require('path')
+    const CleanPlugin = require('clean-webpack-plugin')
     module.exports = {
         mode: 'production'
         entry:'./array.js',
@@ -37,7 +39,6 @@
             filename: 'bundle.js',
             path: path.require(__dirname, 'dist'),
         },
-        devtool: 'none',
         module: {
             rules: [
                 {test: /\.ts$/, use: 'ts-loader', excludes: /node_modules/}
@@ -49,8 +50,8 @@
             }
         },
         resolve: {extensions:['.ts', '.js']},
-        plugin: [
-            
+        plugins: [
+            new CleanPlugin.CleanWebpackPlugin()
         ]
     }
 */
